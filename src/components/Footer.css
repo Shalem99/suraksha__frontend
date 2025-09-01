@@ -1,0 +1,133 @@
+/* ===== Footer Styles ===== */
+.footer {
+  background: linear-gradient(135deg, #0a0f1c, #1c2a48);
+  color: #fff;
+  padding: 60px 20px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #f7c948; /* Golden highlight */
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #f7c948;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #dcdcdc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #dcdcdc;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #f7c948;
+  padding-left: 5px;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 12px;
+  color: #dcdcdc;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #f7c948;
+  transform: scale(1.2);
+}
+
+.contact-info p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #000000;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #a9a9a9;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #a9a9a9;
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f7c948;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

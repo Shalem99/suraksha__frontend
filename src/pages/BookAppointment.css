@@ -1,0 +1,122 @@
+/* BookAppointment.css */
+
+/* General page styling */
+.book-appointment-page {
+  background: #0f172a; /* dark background */
+  color: #e2e8f0; /* light gray text */
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Page header */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+/* Appointment form */
+.appointment-form {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #344a6a;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+  outline: none;
+}
+
+/* Submit button */
+.submit-btn {
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Success/Error messages */
+.message {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.message.success {
+  color: #22c55e;
+}
+
+.message.error {
+  color: #ef4444;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .appointment-form {
+    padding: 20px;
+  }
+
+  .page-header h1 {
+    font-size: 1.6rem;
+  }
+}

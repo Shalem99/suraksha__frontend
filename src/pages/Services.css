@@ -1,0 +1,289 @@
+/* ===========================
+   Services Page Styling
+=========================== */
+.services-page {
+  padding: 4rem 1rem;
+  background: #0f172a; /* darker shade for page bg */
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #e9e3d5; /* updated from white */
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+  color: #5d2f2f;
+  font-weight: 700;
+}
+
+.page-header p {
+  color: #e9e3d5; /* updated from dark */
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Service Card */
+.service-card {
+  background: #1c253c;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #e9e3d5; /* updated */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  background: #0f172a;
+}
+
+/* Header inside card */
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-header h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e9e3d5; /* updated */
+}
+
+.service-price {
+  font-weight: 700;
+  color: #60a5fa; /* light blue accent */
+  font-size: 1.1rem;
+}
+
+/* Service Body */
+.service-body {
+  margin-top: 0.8rem;
+  flex-grow: 1;
+}
+
+.service-body p {
+  color: #e9e3d5; /* updated */
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.service-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #b9b2a7; /* softer beige-gray */
+}
+
+/* Footer Button */
+.service-footer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.service-footer .btn {
+  background: #0077ff;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.service-footer .btn:hover {
+  background: #005fcc;
+}
+
+/* ===========================
+   Modal Styling
+=========================== */
+.booking-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #344a6a;
+  border-radius: 18px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.4s ease;
+  color: #e9e3d5; /* updated */
+}
+
+/* Modal Anim */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #e9e3d5; /* updated */
+}
+
+.modal-content p {
+  color: #e9e3d5; /* updated */
+  margin-bottom: 1rem;
+}
+
+/* Gallery inside modal */
+.media-gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.media-gallery img,
+.media-gallery video {
+  width: 48%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Form Styling */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1.5px solid #475569;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  background: #2b3c55;
+  color: #e9e3d5; /* updated */
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: #60a5fa;
+  outline: none;
+}
+
+.modal-content textarea {
+  resize: none;
+  min-height: 90px;
+}
+
+/* Modal Buttons */
+.modal-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.modal-actions .btn {
+  flex: 1;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn-primary {
+  background: #0077ff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #005fcc;
+}
+
+.btn-secondary {
+  background: #475569;
+  color: #e9e3d5; /* updated */
+}
+
+.btn-secondary:hover {
+  background: #334155;
+}
+
+/* Status Message */
+.status {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #60a5fa;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .service-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .media-gallery img,
+  .media-gallery video {
+    width: 100%;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .service-footer .btn {
+    width: 100%;
+  }
+}
