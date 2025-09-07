@@ -33,7 +33,7 @@ const Services = () => {
 
   const fetchServices = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/services");
+      const response = await axios.get("http://surakshabackend-production-7967.up.railway.app/api/services");
 
       // ✅ Ensure every service has at least one video
       const updatedServices = response.data.map((service) => {
@@ -150,7 +150,7 @@ const Services = () => {
     setStatus("");
 
     try {
-      await axios.post("http://localhost:5000/api/appointments", {
+      await axios.post("http://surakshabackend-production-7967.up.railway.app/api/appointments", {
         ...formData,
         service: selectedService.name,
       });
