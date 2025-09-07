@@ -32,9 +32,9 @@ const BookAppointment = () => {
 
     try {
       const payload = {
-        ...formData,
-        date: new Date(formData.date).toISOString(),
-      };
++    ...formData,
++    date: formData.date, // keep as YYYY-MM-DD
++  };
 
       console.log("Payload being sent:", payload);
 
