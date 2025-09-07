@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./BookAppointment.css";
 
-const API_URL = "http://surakshabackend-production-7967.up.railway.app"; // backend running locally
+const API_URL = "https://surakshabackend-production-7967.up.railway.app"; // backend running locally
 
 const BookAppointment = () => {
   const [formData, setFormData] = useState({
