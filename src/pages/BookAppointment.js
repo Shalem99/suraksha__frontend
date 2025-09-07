@@ -31,7 +31,7 @@ const BookAppointment = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/appointments",
+        "http://surakshabackend-production-7967.up.railway.app/api/appointments",
         formData
       );
       setStatus("Appointment booked successfully! We will contact you soon.");
