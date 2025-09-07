@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./BookAppointment.css";
 
+const API_URL = "http://localhost:5000"; // backend running locally
+
 const BookAppointment = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,7 +12,6 @@ const BookAppointment = () => {
     service: "",
     date: "",
     time: "",
-    address: "",
     carModel: "",
     message: "",
   });
@@ -30,11 +31,18 @@ const BookAppointment = () => {
     setStatus("");
 
     try {
-      const response = await axios.post(
-        "http://surakshabackend-production-7967.up.railway.app/api/appointments",
-        formData
+      const payload = {
+        ...formData,
+        date: new Date(formData.date).toISOString(),
+      };
+
+      console.log("Payload being sent:", payload);
+
+      await axios.post(`${API_URL}/api/appointments`, payload);
+
+      setStatus(
+        "✅ Appointment booked successfully! Check your email for confirmation."
       );
-      setStatus("Appointment booked successfully! We will contact you soon.");
       setFormData({
         name: "",
         email: "",
@@ -42,13 +50,12 @@ const BookAppointment = () => {
         service: "",
         date: "",
         time: "",
-        address: "",
         carModel: "",
         message: "",
       });
     } catch (error) {
-      console.error("Error booking appointment:", error);
-      setStatus("Error booking appointment. Please try again.");
+      console.error("❌ Error booking appointment:", error);
+      setStatus("❌ Error booking appointment. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -171,19 +178,6 @@ const BookAppointment = () => {
               </div>
 
               <div className="form-group full-width">
-                <label htmlFor="address">Service Address *</label>
-                <textarea
-                  id="address"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleChange}
-                  rows="3"
-                  placeholder="Enter your complete address where service is needed"
-                  required
-                />
-              </div>
-
-              <div className="form-group full-width">
                 <label htmlFor="message">Additional Message</label>
                 <textarea
                   id="message"
@@ -199,7 +193,7 @@ const BookAppointment = () => {
             {status && (
               <div
                 className={`message ${
-                  status.includes("success") ? "success" : "error"
+                  status.startsWith("✅") ? "success" : "error"
                 }`}
               >
                 {status}
